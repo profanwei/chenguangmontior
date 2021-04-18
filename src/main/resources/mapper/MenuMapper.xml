@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nuaa.chenguangmontior.dao.MenuDao">
+
+    <select id="selectAllMenu" resultType="LoadAllMenuBean">
+        select c.page_id id,c.text,c.pid,c.pagelevel,c.iconcls iconCls,c.page_url url from listree c where c.pagelevel ='1' order by c.page_id
+    </select>
+
+    <select id="selectChildrenMenu" resultType="LoadAllMenuBean">
+        select t.page_id id,t.text ,t.iconcls iconCls,t.pid,t.pagelevel,t.page_url url from LISTREE t where t.pid= #{pid}order by t.page_Id
+    </select>
+
+</mapper>

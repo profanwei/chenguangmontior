@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nuaa.chenguangmontior.dao.MonitorDao">
+
+    <select id="findById" parameterType="int" resultType="com.nuaa.chenguangmontior.model.Student">
+        SELECT * FROM test WHERE id = #{id}
+    </select>
+
+    <select id="findByProgram" parameterType="String" resultType="com.nuaa.chenguangmontior.model.ProgramKnife">
+        SELECT  order_id , knife  FROM useknife WHERE program = #{program}
+    </select>
+</mapper>
